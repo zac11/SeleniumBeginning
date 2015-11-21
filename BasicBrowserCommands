@@ -1,0 +1,32 @@
+import unittest
+from selenium import webdriver
+ 
+class logintest(unittest.TestCase):
+    def setUp(self):
+       self.driver=webdriver.Firefox()
+    def test_filldetails(self):
+       driver=self.driver
+       driver.maximize_window()
+       driver.get('http://www.toolsqa.com/')
+ 
+       driver.implicitly_wait(30)
+ 
+       title1=driver.title
+       print(title1)
+ 
+       print(len(title1))
+ 
+       url1=driver.current_url
+ 
+       print(url1)
+       print(len(url1))
+ 
+       driver.refresh()
+ 
+       print(driver.page_source)
+       print(len(driver.page_source))
+ 
+  def tearDown(self):
+      self.driver.quit()
+if __name__ == '__main__':
+unittest.main()
