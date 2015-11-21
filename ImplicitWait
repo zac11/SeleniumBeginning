@@ -1,0 +1,19 @@
+from selenium import webdriver
+import unittest
+ 
+class AlertHandle(unittest.TestCase):
+ 
+   def setUp(self):
+      self.driver=webdriver.Firefox()
+      self.driver.implicitly_wait(30)
+      self.driver.maximize_window()
+ 
+      self.driver.get('http://www.questionselenium.com/2013/09/sample-confirmation-box.html')
+ 
+  def test_Alterbox(self):
+      print("This is a test to show implicit wait")
+  def tearDown(self):
+      self.driver.quit()
+ 
+if __name__=="__main__"
+unittest.main(verbosity=2)
